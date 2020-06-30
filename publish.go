@@ -201,6 +201,8 @@ func createTrackRelease(whatsNewsDir string, versionCodes googleapi.Int64s, user
 
 	if updatePriority != 0 {
 		newRelease.InAppUpdatePriority = int64(updatePriority)
+	} else {
+		newRelease.InAppUpdatePriority = int64(0)
 	}
 
 	if err := updateListing(whatsNewsDir, newRelease); err != nil {
